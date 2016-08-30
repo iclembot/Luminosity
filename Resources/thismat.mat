@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<polycode_material_library>
+    <shaders>
+        <shader type="glsl" name="ShaderShadows" numPointLights="0" numSpotLights="4" screen="false">
+            <vp source="default/DefaultShaderShadows.vert" />
+            <fp source="default/DefaultShaderShadows.frag" />
+        </shader>
+        <shader type="glsl" name="ManyShadows" numPointLights="1" numSpotLights="4" screen="false">
+            <vp source="Resources/ShaderManyShadows.vert" />
+            <fp source="Resources/ShaderManyShadows.frag" />
+        </shader>
+        <shader type="glsl" name="4spots" numPointLights="1" numSpotLights="4" screen="false">
+            <vp source="default/NormalShader.vert" />
+            <fp source="default/DefaultShaderNoTexture.frag" />
+        </shader>
+    </shaders>
+    <cubemaps>
+        <cubemap name="skymap0" xPos="Resources/sb_left.png" xNeg="Resources/sb_right.png" yPos="Resources/sb_bottom.png" yNeg="default/default.png" zPos="Resources/sb_front.png" zNeg="Resources/sb_back.png" />
+    </cubemaps>
+    <materials>
+        <material name="Eye" blendingMode="0">
+            <shader name="DefaultShaderShadows">
+                <textures>
+                    <texture name="diffuse">default/default.png</texture>
+                </textures>
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="modelMatrix" polystring:value="" />
+                    <param name="shadowAmount" value="1.00" />
+                    <param name="shadowMatrix0" polystring:value="" />
+                    <param name="shadowMatrix1" polystring:value="" />
+                    <param name="shininess" value="10.00" />
+                    <param name="specular_color" value="1.00 0.87 0.87 1.00" />
+                </params>
+            </shader>
+        </material>
+        <material name="Shingles" blendingMode="0">
+            <shader name="DefaultShaderShadows">
+                <textures>
+                    <texture name="diffuse">default/default.png</texture>
+                </textures>
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="modelMatrix" polystring:value="" />
+                    <param name="shadowAmount" value="0.00" />
+                    <param name="shadowMatrix0" polystring:value="" />
+                    <param name="shadowMatrix1" polystring:value="" />
+                    <param name="shininess" value="0.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
+        <material name="Art" blendingMode="1">
+            <shader name="DefaultShaderShadows">
+                <textures>
+                    <texture name="diffuse">default/default.png</texture>
+                </textures>
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="modelMatrix" polystring:value="" />
+                    <param name="shadowAmount" value="1.00" />
+                    <param name="shadowMatrix0" polystring:value="" />
+                    <param name="shadowMatrix1" polystring:value="" />
+                    <param name="shininess" value="0.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
+        <material name="Ground" blendingMode="1">
+            <shader name="ManyShadows">
+                <textures>
+                    <texture name="diffuse">Resources/editorGrid.png</texture>
+                </textures>
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="modelMatrix" polystring:value="" />
+                    <param name="shadowAmount" value="4.00" />
+                    <param name="shadowMatrix0" polystring:value="" />
+                    <param name="shadowMatrix1" polystring:value="" />
+                    <param name="shadowMatrix2" polystring:value="" />
+                    <param name="shadowMatrix3" polystring:value="" />
+                    <param name="shininess" value="0.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
+        <material name="skybox" blendingMode="0">
+            <shader name="SkyBox">
+                <textures>
+                    <cubemap name="lightCube">skymap0</cubemap>
+                </textures>
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="modelMatrix" polystring:value="" />
+                </params>
+            </shader>
+        </material>
+        <material name="Wood" blendingMode="1">
+            <shader name="DefaultShader">
+                <textures>
+                    <texture name="diffuse">default/default.png</texture>
+                </textures>
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="shininess" value="0.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
+        <material name="Stage" blendingMode="1">
+            <shader name="ShaderShadows">
+                <textures />
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="modelMatrix" polystring:value="" />
+                    <param name="shadowAmount" value="0.00" />
+                    <param name="shadowMatrix0" polystring:value="" />
+                    <param name="shadowMatrix1" polystring:value="" />
+                    <param name="shininess" value="0.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
+        <material name="Sphere" blendingMode="1">
+            <shader name="4spots">
+                <textures />
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="shininess" value="50.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
+    </materials>
+</polycode_material_library>

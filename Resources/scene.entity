@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<entity version="2">
+    <settings>
+        <linkedResourcePools>
+            <resourcePool path="Resources/thismat.mat" />
+        </linkedResourcePools>
+        <layers />
+    </settings>
+    <root polystring:id="" layerID="0" polystring:tags="" type="Entity" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="0.000000" rY="0.000000" rZ="0.000000" rW="1.000000" pX="0.000000" pY="0.000000" pZ="0.000000" bbX="0.000000" bbY="0.000000" bbZ="0.001000">
+        <children>
+            <child id="lx1" layerID="0" polystring:tags="" type="SceneLight" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="-0.239118" rY="-0.369644" rZ="-0.099046" rW="0.892399" pX="-4.000000" pY="4.000000" pZ="4.000000" bbX="0.100000" bbY="0.100000" bbZ="0.100000">
+                <props>
+                    <prop name="Gel" value="R16" />
+                </props>
+                <SceneLight type="1" cR="0.983957" cG="0.752438" cB="0.752439" cA="1.000000" scR="1.000000" scG="1.000000" scB="1.000000" scA="1.000000" intensity="50.000000" importance="0" cAtt="1.000000" lAtt="1.000000" qAtt="1.000000" spotCutoff="16.451613" spotExponent="0.086022" shadows="true" shadowmapFOV="58.741935" shadowmapRes="256" />
+            </child>
+            <child id="main_camera" layerID="0" polystring:tags="" type="Camera" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="-0.166741" rY="0.000000" rZ="0.000000" rW="0.986001" pX="0.000000" pY="2.966285" pZ="5.618579" bbX="0.000000" bbY="0.000000" bbZ="0.001000">
+                <Camera exposure="1.000000" nearClip="1.000000" farClip="1000.000000" ortho="false" fov="45.000000" />
+            </child>
+            <child id="lx2" layerID="0" polystring:tags="" type="SceneLight" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="-0.000000" rY="0.923880" rZ="0.382683" rW="0.000000" pX="0.000000" pY="4.000000" pZ="-4.000000" bbX="0.100000" bbY="0.100000" bbZ="0.100000">
+                <props>
+                    <prop name="Gel" value="R378" />
+                </props>
+                <SceneLight type="1" cR="0.612766" cG="0.473391" cB="0.994652" cA="1.000000" scR="1.000000" scG="1.000000" scB="1.000000" scA="1.000000" intensity="50.000000" importance="0" cAtt="1.000000" lAtt="1.000000" qAtt="1.000000" spotCutoff="21.290323" spotExponent="0.032258" shadows="true" shadowmapFOV="60.000000" shadowmapRes="256" />
+            </child>
+            <child id="sphere" layerID="0" polystring:tags="" type="ScenePrimitive" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="0.000000" rY="0.000000" rZ="0.000000" rW="1.000000" pX="0.000000" pY="1.000000" pZ="0.000000" bbX="2.000000" bbY="2.000000" bbZ="2.000000">
+                <ScenePrimitive type="5" p1="1.000000" p2="10.000000" p3="20.000000" p4="0.000000" p5="0.000000" />
+                <SceneMesh alphaTest="false" backfaceCulled="true" sendBoneMatricesToMaterial="false" material="Sphere">
+                    <shader_options>
+                        <shader>
+                            <textures />
+                            <params />
+                        </shader>
+                    </shader_options>
+                </SceneMesh>
+            </child>
+            <child id="ground" layerID="0" polystring:tags="" type="ScenePrimitive" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="0.000000" rY="0.000000" rZ="0.000000" rW="1.000000" pX="-1.136723" pY="0.000000" pZ="0.000000" bbX="40.000000" bbY="0.001000" bbZ="40.000000">
+                <ScenePrimitive type="1" p1="40.000000" p2="40.000000" p3="1.000000" p4="0.000000" p5="0.000000" />
+                <SceneMesh alphaTest="false" backfaceCulled="true" sendBoneMatricesToMaterial="false" material="Ground">
+                    <shader_options>
+                        <shader>
+                            <textures>
+                                <texture name="diffuse">Resources/editorGrid.png</texture>
+                            </textures>
+                            <params />
+                        </shader>
+                    </shader_options>
+                </SceneMesh>
+            </child>
+            <child id="lx3" layerID="0" polystring:tags="" type="SceneLight" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="-0.183013" rY="0.683013" rZ="0.183013" rW="0.683013" pX="3.716886" pY="2.810080" pZ="0.000000" bbX="0.000000" bbY="0.000000" bbZ="0.000000">
+                <props>
+                    <prop name="Gel" value="R60" />
+                </props>
+                <SceneLight type="1" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" scR="1.000000" scG="1.000000" scB="1.000000" scA="1.000000" intensity="50.000000" importance="0" cAtt="1.000000" lAtt="1.000000" qAtt="1.000000" spotCutoff="22.258065" spotExponent="0.100000" shadows="true" shadowmapFOV="60.000000" shadowmapRes="256" />
+            </child>
+            <child id="lx4" layerID="0" polystring:tags="" type="SceneLight" cR="1.000000" cG="1.000000" cB="1.000000" cA="1.000000" blendMode="0" sX="1.000000" sY="1.000000" sZ="1.000000" rX="-0.277817" rY="0.364972" rZ="0.115075" rW="0.881119" pX="4.000000" pY="4.000000" pZ="4.000000" bbX="0.100000" bbY="0.100000" bbZ="0.100000">
+                <props>
+                    <prop name="Gel" value="R73" />
+                </props>
+                <SceneLight type="1" cR="0.000000" cG="0.759358" cB="1.000000" cA="1.000000" scR="1.000000" scG="1.000000" scB="1.000000" scA="1.000000" intensity="50.000000" importance="0" cAtt="1.000000" lAtt="1.000000" qAtt="1.000000" spotCutoff="21.290323" spotExponent="0.032258" shadows="true" shadowmapFOV="60.000000" shadowmapRes="256" />
+            </child>
+        </children>
+    </root>
+</entity>

@@ -70,7 +70,7 @@ overlay:addChild(window)
 
 
 sett_but=UIImageButton("Resources/ui_luminosity/settings_icon.png" , 1 , 48,48 ) 
-sett_but:setPosition(20,200,0)
+sett_but:setPosition(20,vpheight/2,0)
 overlay:addChild(sett_but)
 
 function butt_clik(t, event)
@@ -80,7 +80,7 @@ end
 sett_but:addEventListener(nil, butt_clik, UIEvent.CLICK_EVENT)
 
 add_but=UIImageButton("Resources/ui_luminosity/add_entity.png" , 1 , 48,48 ) 
-add_but:setPosition(20,280,0)
+add_but:setPosition(20,vpheight/2+80,0)
 overlay:addChild(add_but)
 
 function addbutt_clik(t, event)
@@ -136,7 +136,7 @@ for i = 0, maxlights-1 do
 end
 
 lite_but=UIImageButton("Resources/ui_luminosity/lights_icon.png" , 1 , 48,48 ) 
-lite_but:setPosition(20,360,0)
+lite_but:setPosition(20,vpheight/2+160,0)
 overlay:addChild(lite_but)
 
 vislites=0

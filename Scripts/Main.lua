@@ -1,5 +1,5 @@
 Services.ResourceManager:addDirResource("Resources", false)
-maxlights=4
+maxlights=4 -- make this editable by the settings window
 require "Scripts/RoscoColors"
 
 

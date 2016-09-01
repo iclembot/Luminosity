@@ -45,6 +45,7 @@ ghost.enabled=false
 scene:addLight(ghost)
 
 function ghostlighter()
+-- put a for loop here to check all lights up to maxlights for enabled, logical and the result of each light with a local var
 	if not scene:getLight(1).enabled and not scene:getLight(2).enabled and not scene:getLight(3).enabled and not scene:getLight(4).enabled then
 		ghost.enabled=true
 	else
@@ -223,6 +224,8 @@ gelPicker:addEventListener(nil, onEntryChange, UIEvent.CHANGE_EVENT) --register 
 gelPicker:addComboItem("Shiny")	--add items
 gelPicker:addComboItem("Eggshell")
 gelPicker:addComboItem("Matte")
+
+-- add gellpicker combobox handlers
 
 scene:addChild(globalMenu)
 

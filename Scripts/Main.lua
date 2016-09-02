@@ -18,12 +18,13 @@ end
 
 --lookdown()
 
-require "Scripts/ui"
 
 ground = safe_cast(sceneEntity:getEntityById("ground", true), ScenePrimitive)
 scene:addEntity(ground)
 sphere =safe_cast(sceneEntity:getEntityById("sphere", true), ScenePrimitive)
 scene:addEntity(sphere)
+
+require "Scripts/ui"
 
 function loadLights()
 	light = {}

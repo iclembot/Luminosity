@@ -138,5 +138,16 @@
                 </params>
             </shader>
         </material>
+        <material name="Untitled" blendingMode="1">
+            <shader name="DefaultShader">
+                <textures />
+                <params>
+                    <param name="ambient_color" value="0.00 0.00 0.00 1.00" />
+                    <param name="diffuse_color" value="1.00 1.00 1.00 1.00" />
+                    <param name="shininess" value="0.00" />
+                    <param name="specular_color" value="1.00 1.00 1.00 1.00" />
+                </params>
+            </shader>
+        </material>
     </materials>
 </polycode_material_library>

@@ -213,25 +213,36 @@ end
 
 fsButton:addEventListener(nil, fsButton_clik, UIEvent.CLICK_EVENT)
 
-
 globalMenu = UIGlobalMenu() --this will be used for the dropping-down entries
+--overlay:addChild(globalMenu)
 
-gelPicker = UIComboBox(globalMenu, 180)	--create new ComboBox
-gelPicker:setPosition(window.padding, window.topPadding+170)
-window:addChild(gelPicker)
-gelPicker:addEventListener(nil, onEntryChange, UIEvent.CHANGE_EVENT) --register to receive event when another entry has been selected
+shineCombo = UIComboBox(globalMenu, 180)	--create new ComboBox
+shineCombo:setPosition(window.padding, window.topPadding+170)
+window:addChild(shineCombo)
+-- shineCombo:addEventListener(nil, onEntryChange, UIEvent.CHANGE_EVENT) --register to receive event when another entry has been selected
 
-gelPicker:addComboItem("Shiny")	--add items
-gelPicker:addComboItem("Eggshell")
-gelPicker:addComboItem("Matte")
+shineCombo:addComboItem("Shiny")	--add items
+shineCombo:addComboItem("Eggshell")
+shineCombo:addComboItem("Matte")
 
--- add gellpicker combobox handlers
+binding = sphere:getLocalShaderOptions()
+param = binding:addParam(ProgramParam.PARAM_NUMBER, "shininess")--getLocalParamByName("shininess")
 
-scene:addChild(globalMenu)
+function onMatChange(t, event)
+	if shineCombo:getSelectedIndex() == 0 then
+		param:setNumber(50)
+	elseif shineCombo:getSelectedIndex() == 1 then
+		param:setNumber(15)
+	else
+		param:setNumber(0)
+	end
+end
+
+shineCombo:addEventListener(nil, onMatChange, UIEvent.CHANGE_EVENT)
+
+overlay:addChild(globalMenu)
 
 overlay.rootEntity.processInputEvents = true
-
-
 	
 function uiUpdate(elapsed)
 	timepast=(timepast+elapsed)

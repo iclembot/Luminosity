@@ -31,7 +31,7 @@ function loadLights()
 		light[i] = safe_cast(scene:getLight(i), SceneLight)
 		light[i].visible=false
 		scene:addChild(light[i])
-		local gel=_G[light[i]:getEntityProp("Gel")]
+		local gel=Gels[light[i]:getEntityProp("Gel")]-- _G[light[i]:getEntityProp("Gel")]
 		if gel ~=nil then
 			light[i]:setLightColor(gel.r,gel.g,gel.b,gel.a)
 			print(gel.r .. " " ..  gel.g .. " " .. gel.b)

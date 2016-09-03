@@ -22,8 +22,9 @@ local polycode_path = "../../.." -- "C:/devel/Polycodedist"
 -- CoreServices.getInstance():getConfig():loadConfig("Polycode", polycode_path.."/IDE/UIThemes/dark/theme.xml")
 -- CoreServices.getInstance():getResourceManager():addArchive(polycode_path.."/IDE/UIThemes/dark/")
 Services.Config:loadConfig("Polycode", polycode_path.."/IDE/UIThemes/dark/theme.xml")
+
 -- CoreServices.getInstance():getConfig():loadConfig("Polycode", "Resources/UIThemes/default/theme.xml")
-CoreServices.getInstance():getResourceManager():addArchive(polycode_path.."/IDE/UIThemes/dark/")
+ CoreServices.getInstance():getResourceManager():addArchive(polycode_path.."/IDE/UIThemes/dark/")
 CoreServices.getInstance():getConfig():setNumericValue("Polycode", "uiTextInputFontSizeMultiline", 12)
 CoreServices.getInstance():getConfig():setNumericValue("Polycode", "uiTextInputFontSize",12)
 CoreServices.getInstance():getConfig():setNumericValue("Polycode", "uiTextInputFontOffsetY",0)
@@ -109,6 +110,30 @@ function lite:lite(i)
 	self.colorBox:setPosition(10, 60)
 	self:addChild(self.colorBox)
 	self.colorBox:addEventListener(self, self.colorChange, UIEvent.CHANGE_EVENT)
+	
+	self.globalMenu = UIGlobalMenu() --this will be used for the dropping-down entries
+	self.globalMenu:setPosition(90,0)
+	overlay:addChild(self.globalMenu) --	self.colorPicker:addChild(self.globalMenu)
+	
+	self.gelCombo = UIComboBox(self.globalMenu, 80)	--create new ComboBox
+	self.gelCombo:setPosition(240, 200)
+	self.colorPicker:addChild(self.gelCombo)
+	self.gelCombo:addComboItem(self.scn_lite:getEntityProp("Gel"))	--add items
+	
+	for k, v in pairs (Gels) do
+	  	self.gelCombo:addComboItem(k)
+	end 
+	self.gelCombo:addEventListener(self, self.onGelChange, UIEvent.CHANGE_EVENT) --register to receive event when another entry has been selected
+end
+
+function lite:onGelChange(t, event)
+	self.scn_lite:setEntityProp("Gel",self.gelCombo:getSelectedItem().label)
+	local gel=Gels[self.scn_lite:getEntityProp("Gel")]  -- _G[light[i]:getEntityProp("Gel")]
+	if gel ~=nil then
+		self.scn_lite:setLightColor(gel.r,gel.g,gel.b,gel.a)
+		print(gel.r .. " " ..  gel.g .. " " .. gel.b)
+	end
+	self.colorPicker:setPickerColor(gel)
 end
 
 function lite:colorChange(t, event)
@@ -219,7 +244,6 @@ globalMenu = UIGlobalMenu() --this will be used for the dropping-down entries
 shineCombo = UIComboBox(globalMenu, 180)	--create new ComboBox
 shineCombo:setPosition(window.padding, window.topPadding+170)
 window:addChild(shineCombo)
--- shineCombo:addEventListener(nil, onEntryChange, UIEvent.CHANGE_EVENT) --register to receive event when another entry has been selected
 
 shineCombo:addComboItem("Shiny")	--add items
 shineCombo:addComboItem("Eggshell")

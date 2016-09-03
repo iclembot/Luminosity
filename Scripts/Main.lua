@@ -1,7 +1,7 @@
 Services.ResourceManager:addDirResource("Resources", false)
 maxlights=4 -- make this editable by the settings window
 require "Scripts/RoscoColors"
-
+table.sort(Gels)
 
 scene = Scene(Scene.SCENE_3D)
 sceneEntity = SceneEntityInstance(scene, "Resources/scene.entity")

@@ -18,7 +18,7 @@
 	<uiTextInputFontNameMultiLine>mono</uiTextInputFontNameMultiLine>
 	<uiDefaultFontSize>12</uiDefaultFontSize>
 	<uiTextInputFontSize>12</uiTextInputFontSize>
-	<uiTextInputFontOffsetY>-2</uiTextInputFontOffsetY>		
+	<uiTextInputFontOffsetY>-2</uiTextInputFontOffsetY>	
 	<uiTextInputFontSizeMultiline>12</uiTextInputFontSizeMultiline>	
 	<uiTreeArrowIconImage>arrowIcon.png</uiTreeArrowIconImage>
 	<uiTreeCellHeight>20</uiTreeCellHeight>

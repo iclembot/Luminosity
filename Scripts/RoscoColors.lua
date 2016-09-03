@@ -1,5 +1,5 @@
 function RoscoColor(r,g,b)
-	return Color(r/65535,g/65535,b/65535, 0)
+	return Color(r/65535,g/65535,b/65535, 255)
 end
 
 Gels={}
